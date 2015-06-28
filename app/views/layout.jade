@@ -1,0 +1,33 @@
+doctype html
+html
+	head
+		include ./inc/head.jade
+		title= title
+	body
+		#preloader
+			#status
+		#home.pfblock-image.screen-height
+			.home-overlay
+			.intro 
+				h1 Nicolas TEMENIDES
+				.start Etudiant à EPITECH Paris
+			a(href="#education")
+				.scroll-down
+					span
+						i.fa.fa-angle-down.fa-2x
+		#header.header
+			include ./inc/header.jade
+		#education.pfblock.pfblock-gray
+			block formation
+		#time.pfblock
+			block timeline
+		#portfolio.pfblock-gray
+			block portfolio
+		#skills.pfblock
+			block skills
+		#contact.pfblock-gray
+			block contact
+		block content
+		#footer
+			include ./inc/footer.jade
+		include ./inc/closure.jade

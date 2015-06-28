@@ -1,0 +1,17 @@
+//- var navEN = [{title:'Home', url:'#home'}, {title:'Skills', url:'#skills'}]
+//-	var navFR = [{title:'Accueil', url:'#home'}, {title:'Compétences', url:'#skills'}]
+- var nav = [{title:'Accueil', url:'#home'}, {title:'Formation', url:'#education'}, {title:'Compétences', url:'#skills'},{title:'Projets', url:'#portfolio'},{title:'Contact', url:'#contact'}];
+
+nav.navbar.navbar-custom(role="navigation")
+	.container
+		.navbar-header
+			button.navbar-toggle(type="button", data-toggle="collapse", data-target="#custom-collapse")
+				span.sr-only Toggle navigation
+				span.icon-bar
+				span.icon-bar
+				span.icon-bar
+			a.navbar-brand(href="/") Nicolas TEMENIDES
+		#custom-collapse.navbar-collapse.collapse
+			ul.nav.navbar-nav.navbar-right
+				each link in nav
+					li: a(href="#{link.url}") #{link.title}

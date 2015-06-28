@@ -1,0 +1,16 @@
+- var social = [{title:'Facebook', url:'#', faicon:' fa-facebook'}, {title:'Twitter', url:'#', faicon:' fa-twitter'}, {title:'Google +', url:'#', faicon:' fa-google-plus'}, {title:'Pinterest', url:'#', faicon:' fa-pinterest'}, {title:'Contact', url:'#', faicon:' fa-envelope'}]
+
+.container
+	.row
+		.col-sm-12
+			ul.social-links
+				each link, index in social
+					li: a.wow.fadeInUp(href="#{link.url}" data-wow-delay=".#{index}s"): i(class="fa" + link.faicon)
+			p.heart
+				| Made with 
+				span.fa.fa-heart.fa-2x.animated.pulse
+				| in Paris
+			p.copyright © 2015 Nicolas TEMENIDES
+.scroll-up
+	a(href="#home")
+		i.fa.fa-angle-up

@@ -1,0 +1,100 @@
+extends layout
+
+block formation
+	.row
+		.col-sm-6.col-sm-offset-3
+			.pfblock-header.wow.fadeInUp
+				h2.pfblock-title Etudes
+				.pfblock-line
+				.pfblock-subtitle Du texte de folie
+	.row
+		.col-sm-3
+			.iconbox.wow.slideInLeft
+				.iconbox-icon
+					span.icon-magic-wand
+				.iconbox-text
+					h3.iconbox-title Beijing Jiaotong University
+					.iconbox-desc Master degree: Software Engineering
+		.col-sm-3
+			.iconbox.wow.slideInLeft
+				.iconbox-icon
+					span.icon-magic-wand
+				.iconbox-text
+					h3.iconbox-title Epitech Paris
+					.iconbox-desc Troisième année
+		.col-sm-3
+			.iconbox.wow.slideInLeft
+				.iconbox-icon
+					span.icon-magic-wand
+				.iconbox-text
+					h3.iconbox-title HEI Lille
+					.iconbox-desc Deux ans en classe préparatoire Physique-Chimie
+		.col-sm-3
+			.iconbox.wow.slideInLeft
+				.iconbox-icon
+					span.icon-magic-wand
+				.iconbox-text
+					h3.iconbox-title Baccalauréat Général
+					.iconbox-desc Série scientifique, option SVT, spécialité Physique-Chimie. Mention AB
+
+block timeline
+	.container
+		ul.timeline.wow.slideInUp
+			each life in timeline
+				li.wow(class= life.position == 'left' ? "slideLeft slideInLeft" : "slideRight slideInRight timeline-inverted")
+					.timeline-badge 
+						i.fa(class= life.icon)
+					.timeline-panel
+						.timeline-heading
+							h4.timeline-title #{life.title}
+							if life.subtitle
+								p
+									small.text-muted #{life.subtitle}
+						.timeline-body
+							p #{life.text}
+
+block portfolio
+	.container
+		.row
+			.col-sm-6.col-sm-offset-3
+				.pfblock-header.wow.fadeInUp
+					h2.pfblock-title Projets
+					.pfblock-line
+					.pfblock-subtitle Travaux réalisés pour l'école, en stage, ou personnellement.
+		.row
+			-var n=0
+			while n < 6
+				.col-sm-4
+					.grid.wow.zoomIn
+						figure.effect-bubba
+							img(src="/assets/img/item-#{n+1}.jpg", alt="img-0#{n+1}")
+							figcaption
+								h2 Crazy Clochard
+								p Il poignarde les petits garçons
+				-n++
+
+block skills
+	.container
+		.row.skills
+			.row
+				.col-sm-6.col-sm-offset-3
+					.pfblock-header.wow.fadeInUp
+						h2.pfblock-title Compétences
+						.pfblock-line
+						.pfblock-subtitle Plein de texte qui explique que je suis le meilleur
+			.col-sm-6.col-md-3.text-center
+				span.chart.easyPieChart(data-percent="80")
+					span.percent 80
+				h3.text-center Programmation
+			.col-sm-6.col-md-3.text-center
+				span.chart.easyPieChart(data-percent="80")
+					span.percent 80
+				h3.text-center Programmation
+			.col-sm-6.col-md-3.text-center
+				span.chart.easyPieChart(data-percent="80")
+					span.percent 80
+				h3.text-center Programmation
+			.col-sm-6.col-md-3.text-center
+				span.chart.easyPieChart(data-percent="80")
+					span.percent 80
+				h3.text-center Programmation
