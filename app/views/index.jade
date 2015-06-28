@@ -1,57 +1,45 @@
 extends layout
 
+mixin badge-class(index)
+
+
 block formation
-	.row
-		.col-sm-6.col-sm-offset-3
-			.pfblock-header.wow.fadeInUp
-				h2.pfblock-title Etudes
-				.pfblock-line
-				.pfblock-subtitle Du texte de folie
-	.row
-		.col-sm-3
-			.iconbox.wow.slideInLeft
-				.iconbox-icon
-					span.icon-magic-wand
-				.iconbox-text
-					h3.iconbox-title Beijing Jiaotong University
-					.iconbox-desc Master degree: Software Engineering
-		.col-sm-3
-			.iconbox.wow.slideInLeft
-				.iconbox-icon
-					span.icon-magic-wand
-				.iconbox-text
-					h3.iconbox-title Epitech Paris
-					.iconbox-desc Troisième année
-		.col-sm-3
-			.iconbox.wow.slideInLeft
-				.iconbox-icon
-					span.icon-magic-wand
-				.iconbox-text
-					h3.iconbox-title HEI Lille
-					.iconbox-desc Deux ans en classe préparatoire Physique-Chimie
-		.col-sm-3
-			.iconbox.wow.slideInLeft
-				.iconbox-icon
-					span.icon-magic-wand
-				.iconbox-text
-					h3.iconbox-title Baccalauréat Général
-					.iconbox-desc Série scientifique, option SVT, spécialité Physique-Chimie. Mention AB
+	.container
+		.row
+			.col-sm-6.col-sm-offset-3
+				.pfblock-header.wow.fadeInUp
+					h2.pfblock-title Etudes
+					.pfblock-line
+		.row
+			each study, index in studies
+				.col-md-3.col-sm-4
+					.iconbox.wow(class= index < 4 ? "fadeInRightBig" : "fadeInLeftBig" data-wow-delay="#{index * 0.25}s")
+						.iconbox-time(class= study.color) #{study.time}
+						.iconbox-text
+							h3.iconbox-title #{study.title}
+							.iconbox-desc #{study.text}
 
 block timeline
 	.container
-		ul.timeline.wow.slideInUp
-			each life in timeline
-				li.wow(class= life.position == 'left' ? "slideLeft slideInLeft" : "slideRight slideInRight timeline-inverted")
-					.timeline-badge 
-						i.fa(class= life.icon)
-					.timeline-panel
-						.timeline-heading
-							h4.timeline-title #{life.title}
-							if life.subtitle
-								p
-									small.text-muted #{life.subtitle}
-						.timeline-body
-							p #{life.text}
+		.row
+			.col-sm-8.col-sm-offset-2
+				.pfblock-header.wow.fadeInUp
+					h2.pfblock-title Experiences professionelles
+					.pfblock-line
+		.row
+			ul.timeline.wow.slideInUp
+				each life in timeline
+					li.wow(class= life.position == 'left' ? "slideLeft slideInLeft" : "slideRight slideInRight timeline-inverted")
+						.timeline-badge 
+							i.fa(class= life.icon)
+						.timeline-panel
+							.timeline-heading
+								h4.timeline-title #{life.title}
+								if life.subtitle
+									p
+										small.text-muted #{life.subtitle}
+							.timeline-body
+								p #{life.text}
 
 block portfolio
 	.container
@@ -60,7 +48,6 @@ block portfolio
 				.pfblock-header.wow.fadeInUp
 					h2.pfblock-title Projets
 					.pfblock-line
-					.pfblock-subtitle Travaux réalisés pour l'école, en stage, ou personnellement.
 		.row
 			-var n=0
 			while n < 6
@@ -81,20 +68,37 @@ block skills
 					.pfblock-header.wow.fadeInUp
 						h2.pfblock-title Compétences
 						.pfblock-line
-						.pfblock-subtitle Plein de texte qui explique que je suis le meilleur
-			.col-sm-6.col-md-3.text-center
-				span.chart.easyPieChart(data-percent="80")
-					span.percent 80
-				h3.text-center Programmation
-			.col-sm-6.col-md-3.text-center
-				span.chart.easyPieChart(data-percent="80")
-					span.percent 80
-				h3.text-center Programmation
-			.col-sm-6.col-md-3.text-center
-				span.chart.easyPieChart(data-percent="80")
-					span.percent 80
-				h3.text-center Programmation
-			.col-sm-6.col-md-3.text-center
-				span.chart.easyPieChart(data-percent="80")
-					span.percent 80
-				h3.text-center Programmation
+			each category in skills
+				.row.category
+					h3 #{category.name}
+					each skill in category.values
+						.col-sm-4.col-md-2.text-center
+							.wrapper(style="height:120px")
+								span.chart.easyPieChart(data-percent= skill.percent class=category.name)
+									if skill.icon
+										i.percent(class= 'devicon-' + skill.icon + '-plain')
+									else
+										span.skill-center #{skill.name}
+							btn.btn.btn-lg Test
+
+block contact
+	.container
+		.row
+			.col-sm-6.col-sm-offset-3
+				.pfblock-header
+					h2.pfblock-title Contact
+					.pfblock-line
+		.row
+			.col-sm-6.col-sm-offset-3
+				form#contact-form(role="form")
+					.ajax-hidden
+						.form-group.wow.fadeInUp
+							label.sr-only(for="contact-name") Name
+							input#contact-name.form-control(type="text" name="contact-name" placeholder="Nom")
+						.form-group.wow.fadeInUp(data-wow-delay=".1s")
+							label.sr-only(for="contact-email") contact-email
+							input#contact-email.form-control(type="email" name="contact-email" placeholder="E-mail")
+						.form-group.wow.fadeInUp(data-wow-delay=".2s")
+							textarea#contact-message.form-control(rows="7" placeholder="Message")
+						button.btn.btn-lg.btn-block.wow.fadeInUp(type="submit" data-wow-delay=".3s") Send
+					.ajax-response

@@ -26,17 +26,50 @@ $(document).ready(function() {
 		$('body').scrollspy({target:'.navbar-custom', offset:70});
 	// Fix for easycharts
     $('.skills').waypoint(function(){
-        $('.chart').each(function(){
-        $(this).easyPieChart({
-                size:140,
-                animate: 2000,
-                lineCap:'butt',
-                scaleColor: false,
-                barColor: '#FF5252',
-                trackColor: 'transparent',
-                lineWidth: 10
-            });
-        });
+        $('.chart.programmation').each(function(){
+	        $(this).easyPieChart({
+	                size:100,
+	                animate: 2000,
+	                lineCap:'butt',
+	                scaleColor: false,
+	                barColor: '#FF5252',
+	                trackColor: false,
+	                lineWidth: 15
+	            });
+	        });
+        $('.chart.web').each(function(){
+	        $(this).easyPieChart({
+	                size:100,
+	                animate: 2000,
+	                lineCap:'butt',
+	                scaleColor: false,
+	                barColor: '#5484ff',
+	                trackColor: false,
+	                lineWidth: 15
+	            });
+	        });
+        $('.chart.frameworks').each(function(){
+	        $(this).easyPieChart({
+	                size:100,
+	                animate: 2000,
+	                lineCap:'butt',
+	                scaleColor: false,
+	                barColor: '#5dff54',
+	                trackColor: false,
+	                lineWidth: 15
+	            });
+	        });
+        $('.chart.outils').each(function(){
+	        $(this).easyPieChart({
+	                size:100,
+	                animate: 2000,
+	                lineCap:'butt',
+	                scaleColor: false,
+	                barColor: '#ff9054',
+	                trackColor: false,
+	                lineWidth: 15
+	            });
+	        });
     },{offset:'80%'});
 
   // Background home
