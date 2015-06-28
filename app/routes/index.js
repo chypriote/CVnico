@@ -25,7 +25,7 @@ var nav = [
 
 var timeline = [
 	{	title:'Beijing Jiatong University', 
-		time:'2016', 
+		time:'20167', 
 		text:'Master Degree: Software Engineering', 
 		icon: 'fa-train',
 		position: 'left'},
