@@ -1,7 +1,5 @@
 extends layout
 
-mixin badge-class(index)
-
 
 block formation
 	.container
@@ -28,18 +26,38 @@ block timeline
 					.pfblock-line
 		.row
 			ul.timeline.wow.slideInUp
-				each life in timeline
-					li.wow(class= life.position == 'left' ? "slideLeft slideInLeft" : "slideRight slideInRight timeline-inverted")
-						.timeline-badge 
-							i.fa(class= life.icon)
-						.timeline-panel
-							.timeline-heading
-								h4.timeline-title #{life.title}
+				-var min = 2016
+				each life, index in timeline
+					li.wow.modal-body(class=index % 2 ? "slideLeft slideInLeft" : "slideRight slideInRight timeline-inverted")
+						.timeline-badge(class = life.logo ? 'logo' : life.class)
+							if life.logo 
+								img(src="/assets/img/logo/" + life.logo)
+							else
+								i.fa(class= life.icon)
+						.modal-content
+							.modal-header
+								h4.modal-title #{life.title}
 								if life.subtitle
-									p
-										small.text-muted #{life.subtitle}
-							.timeline-body
+									p.text-muted #{life.subtitle}
+							.modal-body
 								p #{life.text}
+							.modal-footer 
+								a.timeline-infos.hvr-pop(data-toggle="modal" data-target="#exp-"+index) Plus d'infos
+					if (min > life.time)
+						li.text-center
+							.btn.btn-lg #{life.time}
+						- min = life.time
+					.modal.fade(id="exp-" + index tabindex="-1" role="dialog" aria-labelledby="Projet "+index)
+						.modal-dialog(role="document")
+							.modal-content
+								.modal-header 
+									button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+										span(aria-hidden="true")
+											i.fa.fa-times
+									h4.modal-title Test header
+								.modal-body Test nody
+								.modal-footer test footer
+
 
 block portfolio
 	.container
@@ -72,14 +90,14 @@ block skills
 				.row.category
 					h3 #{category.name}
 					each skill in category.values
-						.col-sm-4.col-md-2.text-center
-							.wrapper(style="height:120px")
+						.col-sm-3.col-md-2.text-center
+							.wrapper(style="height:140px;position:relative")
 								span.chart.easyPieChart(data-percent= skill.percent class=category.name)
 									if skill.icon
-										i.percent(class= 'devicon-' + skill.icon + '-plain')
+										i.percent(class= 'devicon-' + skill.icon + '-plain' title=skill.name)
 									else
 										span.skill-center #{skill.name}
-							btn.btn.btn-lg Test
+							a.btn.btn-lg.hvr-pulse Test
 
 block contact
 	.container
