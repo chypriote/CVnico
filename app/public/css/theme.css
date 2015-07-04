@@ -782,7 +782,7 @@ a:hover {
   font-size: 68.5%;
 }
 figure.effect-bubba {
-  background: #9e5406;
+  background: #000;
 }
 figure.effect-bubba img {
   opacity: 0.7;
@@ -820,7 +820,7 @@ figure.effect-bubba figcaption::after {
   transform: scale(1, 0);
 }
 figure.effect-bubba h2 {
-  padding-top: 10%;
+  padding-top: 15%;
   -webkit-transition: -webkit-transform 0.35s;
   transition: transform 0.35s;
   -webkit-transform: translate3d(0, -20px, 0);

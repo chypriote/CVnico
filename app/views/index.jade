@@ -67,6 +67,24 @@ block portfolio
 					h2.pfblock-title Projets
 					.pfblock-line
 		.row
+			each project, index in projects
+				.col-sm-4
+					.grid.wow.zoomIn
+						a(href="" data-toggle="modal" data-target="#modalProject"+index)
+							figure.effect-bubba
+								img(src="/assets/img/project/" + project.img, alt="#{project.name}")
+								figcaption
+									h2 #{project.name}
+				.modal.fade(id="modalProject" + index tabindex="-1" role="dialog" aria-labelledby="Projet "+index)
+					.modal-dialog(role="document")
+						.modal-content
+							.modal-header 
+								button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+									span(aria-hidden="true")
+										i.fa.fa-times
+								h4.modal-title #{project.name}
+							.modal-body Test nody
+							.modal-footer test footer
 			-var n=0
 			while n < 6
 				.col-sm-4

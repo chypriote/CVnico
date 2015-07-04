@@ -10,7 +10,8 @@ router.get('/', function(req, res, next) {
   	'nav': nav,
   	'timeline': timeline,
   	'studies' : studies,
-  	'skills' : skills
+  	'skills' : skills,
+  	'projects' : projects,
   });
 });
 
@@ -186,6 +187,10 @@ var skills = [
 				percent: 70,
 				icon: 'foundation'
 			},
+			{ name: 'Prestashop',
+				percent: 60,
+				icon: 'prestashop'
+			},
 			{ name: 'AngularJS',
 				percent: 25,
 				icon: 'angularjs'
@@ -234,4 +239,12 @@ var skills = [
 			},
 		]
 	}
+];
+
+var projects = [
+	{
+		name: 'Boutique de la Comédie Française',
+		img: 'comedie-francaise.jpg',
+		skills: [{'prestashop': 'php'}, {'mysql': 'jquery'}, {'css': 'html5'}, ],
+	},
 ];
