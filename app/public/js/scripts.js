@@ -70,8 +70,23 @@ $(document).ready(function() {
 	                lineWidth: 15
 	            });
 	        });
+        $('.chart.OS').each(function(){
+	        $(this).easyPieChart({
+	                size:100,
+	                animate: 2000,
+	                lineCap:'butt',
+	                scaleColor: false,
+	                barColor: '#d454ff',
+	                trackColor: false,
+	                lineWidth: 15
+	            });
+	        });
     },{offset:'80%'});
-
+		$('.category h3').click(function(){
+			$(this).children().toggleClass('fa-minus').toggleClass('fa-plus');
+			$(this).parent().find('.col-sm-3').slideToggle();
+		});
+	
   // Background home
 		$(".screen-height").height($(window).height());
 		$(window).resize(function(){$(".screen-height").height($(window).height());});

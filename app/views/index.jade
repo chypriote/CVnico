@@ -54,7 +54,7 @@ block timeline
 									button(type="button" class="close" data-dismiss="modal" aria-label="Close")
 										span(aria-hidden="true")
 											i.fa.fa-times
-									h4.modal-title Test header
+									h4.modal-title  #{life.title}
 								.modal-body Test nody
 								.modal-footer test footer
 
@@ -66,35 +66,32 @@ block portfolio
 				.pfblock-header.wow.fadeInUp
 					h2.pfblock-title Projets
 					.pfblock-line
+					p Projets sur lesquels j'ai pu travaillé, pour EPITECH, en stage, ou personnellement. Passez la souris dessus pour voir les principales compétences liées.
 		.row
 			each project, index in projects
 				.col-sm-4
 					.grid.wow.zoomIn
-						a(href="" data-toggle="modal" data-target="#modalProject"+index)
+						//- a(href="" data-toggle="modal" data-target="#modalProject"+index)
+						a(href=project.link target="_blank")
 							figure.effect-bubba
 								img(src="/assets/img/project/" + project.img, alt="#{project.name}")
 								figcaption
 									h2 #{project.name}
-				.modal.fade(id="modalProject" + index tabindex="-1" role="dialog" aria-labelledby="Projet "+index)
-					.modal-dialog(role="document")
-						.modal-content
-							.modal-header 
-								button(type="button" class="close" data-dismiss="modal" aria-label="Close")
-									span(aria-hidden="true")
-										i.fa.fa-times
-								h4.modal-title #{project.name}
-							.modal-body Test nody
-							.modal-footer test footer
-			-var n=0
-			while n < 6
-				.col-sm-4
-					.grid.wow.zoomIn
-						figure.effect-bubba
-							img(src="/assets/img/item-#{n+1}.jpg", alt="img-0#{n+1}")
-							figcaption
-								h2 Crazy Clochard
-								p Il poignarde les petits garçons
-				-n++
+									each skill in project.skills
+										if skill != "less"
+											i(class= 'devicon-' + skill + '-plain' title=skill)
+										else
+											i(class= 'devicon-' + skill + '-plain-wordmark' title=skill)
+				//- .modal.fade(id="modalProject" + index tabindex="-1" role="dialog" aria-labelledby="Projet "+index)
+				//- 	.modal-dialog(role="document")
+				//- 		.modal-content
+				//- 			.modal-header 
+				//- 				button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+				//- 					span(aria-hidden="true")
+				//- 						i.fa.fa-times
+				//- 				h4.modal-title #{project.name}
+				//- 			.modal-body Test nody
+				//- 			.modal-footer test footer
 
 block skills
 	.container
@@ -105,17 +102,19 @@ block skills
 						h2.pfblock-title Compétences
 						.pfblock-line
 			each category in skills
-				.row.category
-					h3 #{category.name}
+				.row.category(class="opened " + category.name)
+					h3
+						i.fa.fa-minus
+						| #{category.name}
 					each skill in category.values
 						.col-sm-3.col-md-2.text-center
 							.wrapper(style="height:140px;position:relative")
 								span.chart.easyPieChart(data-percent= skill.percent class=category.name)
 									if skill.icon
-										i.percent(class= 'devicon-' + skill.icon + '-plain' title=skill.name)
+										i.percent(class= 'devicon-' + skill.icon + '-plain' + (skill.iconspecial ? skill.iconspecial : '') title=skill.name)
 									else
 										span.skill-center #{skill.name}
-							a.btn.btn-lg.hvr-pulse Test
+							a.btn.btn-lg.hvr-pulse #{skill.name}
 
 block contact
 	.container

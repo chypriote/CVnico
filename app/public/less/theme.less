@@ -99,7 +99,7 @@ a {
 **HOME
 **************/
 #home {
-  background:url(../img/cover.jpg) fixed no-repeat 50% 50% #222;  
+  background:url(../img/cover.png) fixed no-repeat 50% 50% #222;  
   -webkit-background-size:cover;
   -moz-background-size:cover;
   -o-background-size:cover;
@@ -139,6 +139,12 @@ a {
 ************/
 .category {
   margin-bottom: 30px;
+  h3 {
+    cursor: pointer;
+    i {
+      padding-right: 15px;
+    }
+  }
 }
 .chart {
   display:inline-block;
@@ -159,7 +165,7 @@ a {
 }
 .skill-center {
   display:inline-block;
-  font-size:25px;
+  font-size:20px;
   font-weight:bold;
   line-height:100px;
   z-index:2;
@@ -284,6 +290,12 @@ a {
         font-size:0;
         opacity:0;
       }
+      i {
+        display: none;
+        padding: 5px;
+        padding-top: 15px;
+        font-size: 25px;
+      }
       &::before, &::after {
         pointer-events:none;
       }
@@ -368,7 +380,10 @@ figure.effect-bubba {
       transform:translate3d(0,0,0);
     }
     img {
-      opacity:0.4;
+      opacity:0.1;
+    }
+    i {
+      display: inline-block;
     }
   }
 }

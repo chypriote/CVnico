@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 
-
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { 
@@ -16,7 +15,6 @@ router.get('/', function(req, res, next) {
 });
 
 module.exports = router;
-
 
 var nav = [
 	{title:'Accueil', url:'#home'}, 
@@ -162,6 +160,14 @@ var skills = [
 				percent: 85,
 				icon: 'php'
 			},
+			{ name: 'LESS',
+				percent: 80,
+				icon: 'less',
+				iconspecial : '-wordmark',
+			},
+			{ name: 'J2EE',
+				percent: 50,
+			},
 			{ name: 'MySQL',
 				percent: 40,
 				icon: 'mysql'
@@ -170,10 +176,14 @@ var skills = [
 				percent: 40,
 				icon: 'nodejs'
 			},
+			{ name: 'MongoDB',
+				percent: 15,
+				icon: 'mongodb'
+			},
 		]
 	},
 	{
-		name: 'frameworks',
+		name: 'frameworks & CMS',
 		values: [
 			{ name: 'Bootstrap',
 				percent: 95,
@@ -189,7 +199,6 @@ var skills = [
 			},
 			{ name: 'Prestashop',
 				percent: 60,
-				icon: 'prestashop'
 			},
 			{ name: 'AngularJS',
 				percent: 25,
@@ -213,7 +222,8 @@ var skills = [
 		values: [
 			{ name: 'Git',
 				percent: 75,
-				icon: 'git'
+				icon: 'git',
+
 			},
 			{ name: 'Smarty',
 				percent: 60,
@@ -238,6 +248,27 @@ var skills = [
 				icon: 'photoshop'
 			},
 		]
+	},
+	{
+		name: 'OS',
+		values: [
+			{ name: 'Windows',
+				percent: 95,
+				icon: 'windows8',
+			},
+			{ name: 'Linux',
+				percent: 70,
+				icon: 'linux',
+			},
+			{ name: 'Android',
+				percent: 55,
+				icon: 'android',
+			},
+			{ name: 'Apple',
+				percent: 20,
+				icon: 'apple'
+			},
+		]
 	}
 ];
 
@@ -245,6 +276,53 @@ var projects = [
 	{
 		name: 'Boutique de la Comédie Française',
 		img: 'comedie-francaise.jpg',
-		skills: [{'prestashop': 'php'}, {'mysql': 'jquery'}, {'css': 'html5'}, ],
+		link: 'http://www.boutique-comedie-francaise.fr',
+		skills: ['html5', 'css3', 'jquery', 'php', 'mysql', 'bootstrap'],
 	},
+	{
+		name: 'Observatoire des Territoires',
+		img: 'datar.jpg',
+		link: 'http://www.datar.gouv.fr/observatoire-des-territoires',
+		skills: ['html5', 'css3', 'jquery', 'php', 'mysql', 'drupal'],
+	},
+	{
+		name: 'Promenade à Versailles',
+		img: 'hermes.jpg',
+		link: 'http://www.promenadeaversailles.chateauversailles.fr',
+		skills: ['html5', 'css3', 'javascript', 'php', 'bootstrap'],
+	},
+	{
+		name: 'CV Nicolas TEMENIDES',
+		img: 'cvnico.jpg',
+		link: '/',
+		skills: ['html5', 'css3', 'jquery', 'nodejs', 'less', 'mongodb', 'bootstrap'],
+	},
+	{
+		name: 'Les Talens Lyriques',
+		img: 'ltl.jpg',
+		link: 'http://www.lestalenslyriques.com',
+		skills: ['html5', 'css3', 'jquery', 'php', 'drupal', 'mysql', 'foundation'],
+	},
+	{
+		name: 'Hugues Laurent',
+		img: 'hugues.jpg',
+		link: 'http://www.hugueslaurent.fr',
+		skills: ['html5', 'css3', 'jquery', 'php', 'wordpress', 'bootstrap'],
+	},
+	{
+		name: 'Challenge Wars',
+		img: 'challengewars.jpg',
+		link: 'http://challengewars.byethost12.com/',
+		skills: ['html5', 'css3', 'jquery', 'php', 'mysql', 'bootstrap'],
+	},
+	{
+		name: 'PonyShop',
+		img: '../item-6.jpg',
+		skills: ['html5', 'css3', 'jquery', 'java', 'mysql', 'bootstrap']
+	},
+	{
+		name: '42sh - Minishell',
+		img: '../item-6.jpg',
+		skills: ['c', 'linux',]
+	}
 ];

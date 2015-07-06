@@ -558,7 +558,7 @@ a:hover {
 **HOME
 **************/
 #home {
-  background: url(../img/cover.jpg) fixed no-repeat 50% 50% #222222;
+  background: url(../img/cover.png) fixed no-repeat 50% 50% #222222;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -607,6 +607,12 @@ a:hover {
 .category {
   margin-bottom: 30px;
 }
+.category h3 {
+  cursor: pointer;
+}
+.category h3 i {
+  padding-right: 15px;
+}
 .chart {
   display: inline-block;
   height: 100px;
@@ -636,7 +642,7 @@ a:hover {
 }
 .skill-center {
   display: inline-block;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bold;
   line-height: 100px;
   z-index: 2;
@@ -764,6 +770,12 @@ a:hover {
   font-size: 0;
   opacity: 0;
 }
+.grid figure figcaption i {
+  display: none;
+  padding: 5px;
+  padding-top: 15px;
+  font-size: 25px;
+}
 .grid figure figcaption::before,
 .grid figure figcaption::after {
   pointer-events: none;
@@ -848,5 +860,8 @@ figure.effect-bubba:hover p {
   transform: translate3d(0, 0, 0);
 }
 figure.effect-bubba:hover img {
-  opacity: 0.4;
+  opacity: 0.1;
+}
+figure.effect-bubba:hover i {
+  display: inline-block;
 }
