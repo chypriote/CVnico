@@ -41,7 +41,7 @@ block timeline
 									p.text-muted #{life.subtitle}
 							.modal-body
 								p #{life.text}
-							.modal-footer 
+							//- .modal-footer 
 								a.timeline-infos.hvr-pop(data-toggle="modal" data-target="#exp-"+index) Plus d'infos
 					if (min > life.time)
 						li.text-center
@@ -58,7 +58,6 @@ block timeline
 								.modal-body Test nody
 								.modal-footer test footer
 
-
 block portfolio
 	.container
 		.row
@@ -67,21 +66,23 @@ block portfolio
 					h2.pfblock-title Projets
 					.pfblock-line
 					p Projets sur lesquels j'ai pu travaillé, pour EPITECH, en stage, ou personnellement. Passez la souris dessus pour voir les principales compétences liées.
-		.row
-			each project, index in projects
-				.col-sm-4
-					.grid.wow.zoomIn
-						//- a(href="" data-toggle="modal" data-target="#modalProject"+index)
-						a(href=project.link target="_blank")
-							figure.effect-bubba
-								img(src="/assets/img/project/" + project.img, alt="#{project.name}")
-								figcaption
-									h2 #{project.name}
-									each skill in project.skills
-										if skill != "less"
-											i(class= 'devicon-' + skill + '-plain' title=skill)
-										else
-											i(class= 'devicon-' + skill + '-plain-wordmark' title=skill)
+		.row.portfolio-slider
+			each row in projects
+				.duo-slide
+					each project in row
+						.col-xs-12
+							.grid.wow.zoomIn
+								//- a(href="" data-toggle="modal" data-target="#modalProject"+index)
+								a(href=project.link target="_blank")
+									figure.effect-bubba
+										img(src="/assets/img/project/" + project.img, alt="#{project.name}")
+										figcaption
+											h2 #{project.name}
+											each skill in project.skills
+												if skill != "less"
+													i(class= 'devicon-' + skill + '-plain' title=skill)
+												else
+													i(class= 'devicon-' + skill + '-plain-wordmark' title=skill)
 				//- .modal.fade(id="modalProject" + index tabindex="-1" role="dialog" aria-labelledby="Projet "+index)
 				//- 	.modal-dialog(role="document")
 				//- 		.modal-content
@@ -107,7 +108,7 @@ block skills
 						i.fa.fa-minus
 						| #{category.name}
 					each skill in category.values
-						.col-sm-3.col-md-2.text-center
+						.col-xs-6.col-sm-3.col-md-2.text-center
 							.wrapper(style="height:140px;position:relative")
 								span.chart.easyPieChart(data-percent= skill.percent class=category.name)
 									if skill.icon
@@ -135,5 +136,5 @@ block contact
 							input#contact-email.form-control(type="email" name="contact-email" placeholder="E-mail")
 						.form-group.wow.fadeInUp(data-wow-delay=".2s")
 							textarea#contact-message.form-control(rows="7" placeholder="Message")
-						button.btn.btn-lg.btn-block.wow.fadeInUp(type="submit" data-wow-delay=".3s") Send
+						button.btn.btn-lg.btn-block.wow.fadeInUp(type="submit" data-wow-delay=".3s") Envoyer
 					.ajax-response

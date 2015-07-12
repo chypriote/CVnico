@@ -63,7 +63,7 @@ var studies = [
 		text:'17 Avril', 
 		icon: 'fa-graduation-cap',
 		position: 'left'},
-]
+];
 
 var timeline = [
 	{	title:'Minit-L', 
@@ -273,7 +273,7 @@ var skills = [
 ];
 
 var projects = [
-	{
+	[{
 		name: 'Boutique de la Comédie Française',
 		img: 'comedie-francaise.jpg',
 		link: 'http://www.boutique-comedie-francaise.fr',
@@ -284,8 +284,8 @@ var projects = [
 		img: 'datar.jpg',
 		link: 'http://www.datar.gouv.fr/observatoire-des-territoires',
 		skills: ['html5', 'css3', 'jquery', 'php', 'mysql', 'drupal'],
-	},
-	{
+	}],
+	[{
 		name: 'Promenade à Versailles',
 		img: 'hermes.jpg',
 		link: 'http://www.promenadeaversailles.chateauversailles.fr',
@@ -296,8 +296,8 @@ var projects = [
 		img: 'cvnico.jpg',
 		link: '/',
 		skills: ['html5', 'css3', 'jquery', 'nodejs', 'less', 'mongodb', 'bootstrap'],
-	},
-	{
+	}],
+	[{
 		name: 'Les Talens Lyriques',
 		img: 'ltl.jpg',
 		link: 'http://www.lestalenslyriques.com',
@@ -308,8 +308,8 @@ var projects = [
 		img: 'hugues.jpg',
 		link: 'http://www.hugueslaurent.fr',
 		skills: ['html5', 'css3', 'jquery', 'php', 'wordpress', 'bootstrap'],
-	},
-	{
+	}],
+	[{
 		name: 'Challenge Wars',
 		img: 'challengewars.jpg',
 		link: 'http://challengewars.byethost12.com/',
@@ -317,12 +317,47 @@ var projects = [
 	},
 	{
 		name: 'PonyShop',
-		img: '../item-6.jpg',
+		img: 'ponyshop.jpg',
 		skills: ['html5', 'css3', 'jquery', 'java', 'mysql', 'bootstrap']
+	}],
+	[{
+		name: '42sh - Minishell',
+		img: 'mysh.jpg',
+		skills: ['c', 'linux',]
 	},
 	{
-		name: '42sh - Minishell',
-		img: '../item-6.jpg',
+		name: 'Bomberman',
+		img: 'bomberman.jpg',
+		skills: ['cplusplus', 'linux',]
+	}],
+	[{
+		name: 'Raytracer',
+		img: 'raytracer.jpg',
 		skills: ['c', 'linux',]
-	}
+	},
+	{
+		name: 'EpiAndroid',
+		img: 'epiandroid.jpg',
+		skills: ['java', 'android',]
+	}],
+	[{
+		name: 'Easy Elo Boost v2',
+		img: 'easyboost.jpg',
+		skills: ['html5', 'css3', 'php', 'bootstrap', 'jquery', 'mysql',]
+	},
+	{
+		name: 'Easy Elo Boost',
+		img: 'easyelo.jpg',
+		skills: ['html5', 'css3', 'php', ]
+	}],
+	[{
+		name: 'MyElo',
+		img: 'myelo.jpg',
+		skills: ['html5', 'css3', 'jquery', 'bootsrap', 'php', 'mysql',]
+	},
+	{
+		name: 'Team Seriouslee',
+		img: 'seriouslee.jpg',
+		skills: ['html5', 'css3', 'php', 'mysql',]
+	}]
 ];

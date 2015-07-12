@@ -726,6 +726,11 @@ a:hover {
 .grid h2 {
   font-size: 20px;
 }
+@media (min-width: 768px) and (max-width: 1200px) {
+  .grid h2 {
+    font-size: 16px;
+  }
+}
 .grid figure {
   position: relative;
   float: left;
@@ -839,6 +844,11 @@ figure.effect-bubba h2 {
   transform: translate3d(0, -20px, 0);
   color: #ffffff;
 }
+@media (min-width: 992px) and (max-width: 1200px) {
+  figure.effect-bubba h2 {
+    padding-top: 5%;
+  }
+}
 figure.effect-bubba p {
   padding: 20px 2.5em;
   opacity: 0;
@@ -864,4 +874,32 @@ figure.effect-bubba:hover img {
 }
 figure.effect-bubba:hover i {
   display: inline-block;
+}
+.duo-slide:focus {
+  outline: none;
+}
+.slick-arrow {
+  width: 50px;
+  height: 50px;
+  transition: all 0.5s ease-out;
+}
+.slick-arrow.slick-next {
+  right: -50px;
+}
+.slick-arrow.slick-next:hover {
+  right: -60px;
+}
+.slick-arrow.slick-next:before {
+  color: #000;
+  font-size: 40px;
+}
+.slick-arrow.slick-prev {
+  left: -50px;
+}
+.slick-arrow.slick-prev:hover {
+  left: -60px;
+}
+.slick-arrow.slick-prev:before {
+  color: #000;
+  font-size: 40px;
 }

@@ -86,7 +86,27 @@ $(document).ready(function() {
 			$(this).children().toggleClass('fa-minus').toggleClass('fa-plus');
 			$(this).parent().find('.col-sm-3').slideToggle();
 		});
-	
+		$('.portfolio-slider').slick({
+			//prevArrow: '<a href="btn-prev" class="btn-prev">Prev</a>',
+			//nextArrow: '<a href="btn-next" class="btn-next">Next</a>',
+			slidesToShow: 3,
+			slidesToScroll: 1,
+			responsive: [
+				{
+					breakpoint: 992,
+					settings: {
+						slidesToShow: 2
+					}
+				},
+				{
+					breakpoint: 768,
+					settings: {
+						slidesToShow: 1
+					}
+				}
+			]
+		});
+
   // Background home
 		$(".screen-height").height($(window).height());
 		$(window).resize(function(){$(".screen-height").height($(window).height());});

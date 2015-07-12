@@ -247,6 +247,9 @@ a {
   text-align:center;
   h2 {
     font-size:20px;
+    @media (min-width:768px) and (max-width:1200px) {
+      font-size: 16px;
+    }
   }
   figure {
     position:relative;
@@ -295,6 +298,12 @@ a {
         padding: 5px;
         padding-top: 15px;
         font-size: 25px;
+        @media (min-width:768px) and (max-width:1200px) {
+          font-size: 20px;
+        }
+        @media (max-width:768px) {
+          font-size: 40px;
+        }
       }
       &::before, &::after {
         pointer-events:none;
@@ -359,6 +368,9 @@ figure.effect-bubba {
     -webkit-transform:translate3d(0,-20px,0);
     transform:translate3d(0,-20px,0);
     color:#ffffff;
+    @media (min-width:992px) and (max-width:1200px) {
+      padding-top: 5%;
+    }
   }
   p {
     padding:20px 2.5em;
@@ -384,6 +396,36 @@ figure.effect-bubba {
     }
     i {
       display: inline-block;
+    }
+  }
+}
+.duo-slide {
+  &:focus{
+    outline:none;
+  }
+}
+.slick-arrow {
+  width: 50px;
+  height: 50px;
+  transition: all .5s ease-out;
+  &.slick-next {
+    right: -50px;
+    &:hover{
+      right: -60px;
+    }
+    &:before{
+      color: #000;
+      font-size: 40px;
+    }
+  }
+  &.slick-prev {
+    left: -50px;
+    &:hover {
+      left: -60px;
+    }
+    &:before{
+      color: #000;
+      font-size: 40px;
     }
   }
 }
