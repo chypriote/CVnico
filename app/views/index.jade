@@ -125,16 +125,31 @@ block contact
 					h2.pfblock-title Contact
 					.pfblock-line
 		.row
-			.col-sm-6.col-sm-offset-3
-				form#contact-form(role="form")
-					.ajax-hidden
-						.form-group.wow.fadeInUp
-							label.sr-only(for="contact-name") Name
-							input#contact-name.form-control(type="text" name="contact-name" placeholder="Nom")
-						.form-group.wow.fadeInUp(data-wow-delay=".1s")
-							label.sr-only(for="contact-email") contact-email
-							input#contact-email.form-control(type="email" name="contact-email" placeholder="E-mail")
-						.form-group.wow.fadeInUp(data-wow-delay=".2s")
-							textarea#contact-message.form-control(rows="7" placeholder="Message")
-						button.btn.btn-lg.btn-block.wow.fadeInUp(type="submit" data-wow-delay=".3s") Envoyer
-					.ajax-response
+			.col-sm-4.text-center.wow.zoomIn
+				a
+					h4
+						i.fa.fa-map-marker.fa-3x
+					| Paris, France
+			.col-sm-4.text-center.wow.zoomIn
+				a(href='mailto:nicolas.temenides@epitech.eu')
+					h4
+						i.fa.fa-envelope-o.fa-3x
+					| nicolas.temenides@epitech.eu
+			.col-sm-4.text-center.wow.zoomIn
+				a(href='https://www.linkedin.com/profile/view?id=311450971')
+					h4
+						i.fa.fa-linkedin.fa-3x
+					| LinkedIN
+			//- .col-sm-6.col-sm-offset-3
+			//- 	form#contact-form(role="form")
+			//- 		.ajax-hidden
+			//- 			.form-group.wow.fadeInUp
+			//- 				label.sr-only(for="contact-name") Name
+			//- 				input#contact-name.form-control(type="text" name="contact-name" placeholder="Nom")
+			//- 			.form-group.wow.fadeInUp(data-wow-delay=".1s")
+			//- 				label.sr-only(for="contact-email") contact-email
+			//- 				input#contact-email.form-control(type="email" name="contact-email" placeholder="E-mail")
+			//- 			.form-group.wow.fadeInUp(data-wow-delay=".2s")
+			//- 				textarea#contact-message.form-control(rows="7" placeholder="Message")
+			//- 			button.btn.btn-lg.btn-block.wow.fadeInUp(type="submit" data-wow-delay=".3s") Envoyer
+			//- 		.ajax-response

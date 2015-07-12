@@ -3,13 +3,12 @@
 .container
 	.row
 		.col-sm-12
-			ul.social-links
-				each link, index in social
-					li: a.wow.fadeInUp(href="#{link.url}" data-wow-delay=".#{index}s"): i(class="fa" + link.faicon)
-			p.heart
-				| Made with 
-				span.fa.fa-heart.fa-2x.animated.pulse
-				| in Paris
+			ul.footer-links.hidden-xs
+				each link in nav
+					li: a(href="#{link.url}") #{link.title}
+			//- ul.social-links
+			//- 	each link, index in social
+			//- 		li: a.wow.fadeInUp(href="#{link.url}" data-wow-delay=".#{index}s"): i(class="fa" + link.faicon)
 			p.copyright © 2015 Nicolas TEMENIDES
 .scroll-up
 	a(href="#home")
